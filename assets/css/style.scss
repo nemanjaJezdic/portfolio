@@ -1,0 +1,938 @@
+/*Napomena:Neke elemente nisam ugjezdavao radi lakseg pisanja koda,kao i smanjenja linija koda u responsive scss-u,
+svaka nova sekcija kao i odredjeni elementi su pod komentarima radi lakse preglednosti.*/
+
+
+/*-----------------------General------------------------*/
+$colorwhite:#ffffff;
+$colorblue:#00c8f8;
+@mixin flex($direction: row,$justify: space-between){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+}
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Roboto Condensed', sans-serif;
+	scroll-behavior: smooth;
+}
+a {
+	text-decoration: none;
+}
+ul {
+	list-style-type: none;
+}
+.bold {
+	font-weight: bold;
+	color:$colorblue;
+} 
+   /*class za zatamnjenje pozadinske slike*/
+.light {
+	background-color: rgba(0,0,0,0.55);
+	height: inherit;
+}  /*-------*/
+   /*naslov na svakom delu stranice*/
+h2 {
+	display: block;
+	width: 20%;
+	margin: 0px auto;
+	text-align: center;
+	font-size: 30px;
+	line-height: normal;
+	font-weight: normal;
+	color: #474747;
+}
+.border {
+	border-top: 2px solid   $colorblue;
+	width: 3%;
+	margin: 0px auto;
+	margin-top: 10px;
+	margin-bottom: 60px;
+}  /*-------*/
+h3 {
+	display: block;
+	width: 90%;
+	margin: 0px auto;
+	font-size: 30px;
+	text-align: center;
+	line-height: normal;
+	font-weight: normal;
+	color: #474747;
+}
+p {
+	font-size: 20px;
+}
+.center,
+.center2 {
+	width: 60%;
+	margin: 20px auto;
+	@include flex;
+	&:not(:hover) {
+		transition: ease 1s;
+	}
+}
+.around {
+	justify-content: space-around;
+}
+.fcol {
+	flex-direction: column;
+}
+.padding-top {
+	padding-top: 30px;
+} 
+  /*pozicioniranje navigacije za telefone*/
+.flexcol {
+	height: 85%;
+	@include flex(column,space-around);
+	margin-top: 70px;
+} /*-------*/
+/*----------------------------------------------*/
+/*animacija za skills*/
+@keyframes html {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 95%;
+	}
+}
+@keyframes css {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 95%;
+	}
+}
+@keyframes javas {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 30%;
+	}
+}
+@keyframes java {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 50%;
+	}
+}
+@keyframes c {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 60%;
+	}
+}
+@keyframes boot {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 70%;
+	}
+}
+@keyframes ps {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 60%;
+	}
+}
+@keyframes sass {
+	from {
+		width: 0%;
+	}
+	to {
+		width: 95%;
+	}
+} /*-------*/
+/*animacija za education*/
+@keyframes flash{
+	0% {
+		opacity: .4;
+	}
+	100% {
+		opacity: 1;
+	}
+} /*-------*/
+/*animacija za class koja se pojavljuje klikom na hamburger*/
+@keyframes left-in {
+	from {
+		width: 0%;
+		opacity: 0;
+	}
+	to {
+		width: 100%;
+		opacity: 1;
+	}
+}
+@keyframes left-out {
+	from {
+		width: 100%;
+		opacity: 1;
+	}
+	to {
+		width: 0%;
+		opacity: 0;
+	}
+} /*-------*/
+/*----------------------- Header--------------------*/
+   /*navigacija za telefone i tablete*/
+#mobile-menu {
+	display: none;
+	text-align: center;
+	position: fixed;
+	z-index: 200;
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(to bottom, #000046, #1cb5e0);
+	ul {
+		li {
+			font-size: 27px;
+			a {
+				color: $colorwhite;
+			}
+		}
+	}
+}
+#mobile-menu.active {
+	display: block;
+} /*-------*/
+#particles-js {
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(to right, #0575e6, #021b79);
+	position: absolute;
+	z-index: 100;
+}
+header {
+	width: 100%;
+	height: 100vh;
+	color: $colorwhite;
+	 .up{
+		button {
+			display: none;
+			background-color: transparent;
+			color: $colorwhite;
+			border: none;
+			font-size: 38px;
+			outline: none;
+		}
+		position: fixed;
+		width: 100%;
+		@include flex(row,space-around);
+		border-bottom: 1px solid #eff3f5;
+		z-index: 200;
+		transition: 0.5s;
+	}  /*class koja zamenjuje class .up na odredjenoj visini*/
+	 .up-scrolled {
+		color: #111;
+		background-color:    $colorwhite;
+		transition: 0.5s;
+		z-index: 200;
+		border-bottom: none;
+		-webkit-box-shadow: 0px 5px 16px -1px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px 5px 16px -1px rgba(0,0,0,0.75);
+		box-shadow: 0px 5px 16px -1px rgba(0,0,0,0.75);
+		a {
+			color: #393939;
+		}
+		ul {
+			li {
+				a {
+					&:hover {
+						color: $colorwhite;
+						background-color:   $colorblue;
+					}
+				}
+			}
+		}
+		a.active {
+			color: $colorwhite;
+			background-color:   $colorblue;
+		}
+	  /*-------*/
+	}
+	.down {
+		height: 100%;
+		width: 100%;
+		position: relative;
+		.arrow {
+			position: absolute;
+			bottom: 0%;
+			left: 50%;
+			z-index: 150;
+			a {
+				color: $colorwhite;
+				font-size: 20px;
+				&:hover {
+					color:   $colorblue;
+					transition: ease 0.5s;
+				}
+			}
+		}
+	}
+}
+ /*Naslov*/
+ .name {
+	position: absolute;
+	top: 50%;
+	left: 40%;
+	transform: translateY(-50%);
+	text-align: center;
+	z-index: 150;
+	h1 {
+		font-size: 48px;
+		font-weight: lighter;
+	}
+	p {
+		font-size: 36px;
+		margin-right: 120px;
+	}
+} /*---*/
+.logo {
+	margin: auto 0;
+	width: 20%;
+}
+nav {
+	width: 25%;
+	ul {
+		@include flex(row,space-around);
+		li {
+			a {
+				color: $colorwhite;
+				font-size: 18px;
+				padding: 20px 14px;
+				&:hover {
+					color:   $colorblue;
+					transition: 0.5s;
+				}
+			}
+		}
+	}
+}
+.list {
+	padding: 20px;
+}
+/*----------------------- About--------------------*/
+#main1 {
+	padding-top: 100px;
+	.slika{
+		width: 30%;
+		img {
+			width:300px;
+			height: 300px;
+			object-fit: cover;
+			&:hover {
+				filter: brightness(50%);
+				transition: ease 1s;
+			}
+			&:not(:hover) {
+				filter: brightness(100%);
+				transition: ease 1s;
+			}
+		}
+	}
+	.about{
+		padding: 20px;
+		width: 40%;
+		font-size: 18px;
+		@include flex(column,space-between);
+	}
+}
+.soc {
+	ul {
+		width: 80%;
+		@include flex(row,space-around);
+	}
+	a {
+		color: #474747;
+		font-size: 22px;
+		&:hover {
+			color:   $colorblue;
+			transition: 0.5s;
+		}
+	}
+}
+/*----------------------- SKills--------------------*/
+#main2 {
+	width: 100%;
+	background: linear-gradient(to right, #141e30, #243b55);
+	margin: 130px 0px;
+	margin-bottom: 100px;
+	padding: 100px 0px;
+	padding-bottom: 90px;
+	color: $colorwhite;
+	h2 {
+		color: $colorwhite;
+	}
+	ul {
+		li {
+			margin-bottom: 70px;
+		}
+	}
+    .col{
+		width: 40%;		
+        .bar {
+	     background: #353b48;
+	     display: block;
+	     height: 7px;
+	     border: 2px solid rgba(0, 0, 0,0.3);
+	     border-radius: 3px;
+	     overflow: hidden;
+	     box-shadow: 0 0 20px #2187e7b3;
+	     span {
+		 height: 7px;
+		 float: left;
+		 background:   $colorblue;
+	    }
+      }
+	}
+}
+.html {
+	width: 95%;
+	animation-name: html;
+	animation-duration: 2s;
+}
+.css {
+	width: 95%;
+	animation-name: css;
+	animation-duration: 2s;
+}
+.javas {
+	width: 30%;
+	animation-name: javas;
+	animation-duration: 2s;
+}
+.java {
+	width: 50%;
+	animation-name: java;
+	animation-duration: 2s;
+}
+.c {
+	width: 60%;
+	animation-name: c;
+	animation-duration: 2s;
+}
+.boot {
+	width: 70%;
+	animation-name: boot;
+	animation-duration: 2s;
+}
+.ps {
+	width: 60%;
+	animation-name: ps;
+	animation-duration: 2s;
+}
+.sass {
+	width: 95%;
+	animation-name: sass;
+	animation-duration: 2s;
+}
+/*----------------------- My Projects--------------------*/
+#main3 {
+	padding: 100px 0px;
+	.p1{
+		width: 100%;
+		@include flex;
+		margin-top: 130px;
+	}
+}
+.site {
+	width: 35%;
+	overflow: hidden;
+	height: 480px;
+	img {
+		width: 360px;
+		height: 480px;
+	}
+	&:hover {
+		.show-off {
+			top: -700px;
+		}
+		transform: scale(1.1);
+		transition: ease 0.5s;
+	}
+	&:not(:hover) {
+		transform: scale(1);
+		transition: ease 0.5s;
+	}
+}
+.infor {
+	width: 40%;
+	.border {
+		width: 9%;
+	}
+	p {
+		text-align: left;
+		letter-spacing: 2px;
+	}
+}
+.show-off {
+	width: 360px;
+	height: 480px;
+	position: relative;
+	top: -800px;
+	left: 50px;
+	transition: 1s;
+	transform: rotate(110deg);
+	background: linear-gradient(90deg, rgba(255,255,255, 0)30%, rgba(255,255,255,0.3)100%);
+}
+/*----------------------- Education--------------------*/
+#main4 {
+	width: 100%;
+	margin: 100px 0px;
+	padding: 100px 0px;
+	background-color: #f7f6f6;
+	text-align: center;
+	.fax{
+		margin-top: 20px;
+		width: 25%;
+		padding: 0px 20px;
+		p {
+			margin: 20px 0px;
+		}
+	}
+}
+.flogo {
+	img {
+		height: 140px;
+		&:hover {
+			opacity: 1;
+			animation: flash 1.5s;
+		}
+	}
+}
+/*----------------------- Other skilss--------------------*/
+#main5 {
+	width: 100%;
+	padding: 100px 0px;
+	text-align: center;
+	color: $colorwhite;
+	span {
+		font-size: 35px;
+		color: #4dd7fa;
+	}
+	h4 {
+		color: #4dd7fa;
+		font-size: 25px;
+		margin: 25px 0px;
+		font-weight: normal;
+	}
+	.hold{
+		width: 25%;
+	}
+}
+.v1 {
+	background-color: #606060;
+	padding: 30px;
+	margin-top: 70px;
+	width: 100%;
+	-webkit-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+	box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.75);
+	p {
+		font-size: 17px;
+		text-align: center;
+	}
+	&:hover {
+		background-color: $colorwhite;
+		color: #474747;
+		box-shadow: 0px 0px 10px #474747;
+		transition: ease 1s;
+	}
+	&:not(:hover) {
+		transition: ease 1s;
+	}
+}
+/*----------------------- Contact--------------------*/
+#main6 {
+	width: 100%;
+	background-image: url("../img/contact.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+	margin-top: 100px;
+	h2 {
+		color: $colorwhite;
+		margin-top: 50px;
+	}
+	.center {
+		width: 75%;
+		margin-bottom: 0px;
+	}
+	.light {
+		padding-bottom: 170px;
+	}
+	.info1{
+		width: 40%;
+	}
+}
+.in {
+	width: 100%;
+	margin-top: 50px;
+	position: relative;
+	resize: none;
+	span {
+		position: absolute;
+		top: 20%;
+		left: 45%;
+		color: $colorwhite;
+		font-size: 23px;
+	}
+}
+input[type="text"],
+input[type="email"]{
+	background: transparent;
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid $colorwhite;
+	padding-left: 30px;
+	padding-bottom: 20px;
+	color: $colorwhite;
+	&::placeholder {
+		color: $colorwhite;
+		font-weight: lighter;
+	}
+}
+input {
+	&:focus {
+		outline: none;
+		border-bottom: 1px solid   $colorblue;
+		transition: ease 0.5s;
+		color: $colorwhite;
+		padding-left: 10px;
+	}
+	&:not(:focus) {
+		border-bottom: 1px solid $colorwhite;
+		padding-left: 30px;
+		transition: ease 0.5s;
+	}
+}
+textarea {
+	&::placeholder {
+		color: $colorwhite;
+		font-weight: lighter;
+	}
+	width: 100%;
+	height: 130px;
+	color: $colorwhite;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid $colorwhite;
+	&:focus {
+		outline: none;
+		border-bottom: 1px solid   $colorblue;
+		transition: ease 0.5s;
+		color: $colorwhite;
+		padding-left: 10px;
+	}
+	&:not(:focus) {
+		border-bottom: 1px solid $colorwhite;
+		transition: 0.5s;
+	}
+}
+input[type="button"] {
+	width: 100%;
+	background-color:   $colorblue;
+	border: none;
+	border-radius: 10px;
+	padding: 10px;
+	&:focus {
+		border: none;
+	}
+	&:not(:focus) {
+		border: none;
+	}
+}
+/*-------------Responsive----------*/
+@media screen and (max-width:1636px){
+	#main5{
+		.center{
+			width:70%;
+		}
+	}
+}
+@media screen and (max-width:1600px) {
+	.site {
+		width: 40%;
+	}
+	.name {
+		left: 38%;
+	}
+	#main6 {
+		.light {
+			padding-bottom: 150px;
+		}
+	}
+}
+@media screen and (max-width:1404px){
+	#main5{
+		.center{
+			width:80%;
+		}
+	}
+}
+@media screen and (max-width:1368px) {
+	#main3{
+		.p1{
+		  flex-direction: column;
+		  align-items: center;
+	    }
+	}
+	.site {
+		width: auto;
+		order: 1;
+	}
+	.infor {
+		margin-top: 20px;
+		order: 2;
+	}
+	#main5{
+	 .hold{
+		@include flex;
+		width: 60%;
+	 }
+	}
+	.v1 {
+		width: 35%;
+	}
+}
+@media screen and (max-width:1366px) {
+	nav {
+		width: 40%;
+	}
+	.center {
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+	}
+	.soc {
+		width: 60%;
+		margin: 20px auto;
+		order: 1;
+		ul {
+			width: 90%;
+		}
+	}
+	.info {
+		text-align: justify;
+		order: 2;
+	}
+	#main1{
+		.slika{
+		width: auto;
+		img {
+			border-radius: 50%;
+			width: 260px;
+			height: 260px;
+		}
+	  } 
+	}
+	.border2 {
+		border-top: 0.5px solid #4747478a;
+		width: 50%;
+		margin-top: 100px;
+	}
+	input[type="text"] ,
+	input[type="email"]{
+		width: 90%;
+	}
+	#main5{
+		.hold{
+			width:80%;
+		}
+	}
+	#main6 {
+		.light {
+			padding-bottom: 100px;
+		}
+	}
+}
+@media screen and (max-width:1180px) {
+	#main6{
+	 .info1{
+		width: 50%;
+	 }
+	}
+	.name {
+		left: 35%;
+	}
+}
+@media screen and (max-width:1000px) {
+	.center2 {
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+	}
+}
+@media screen and (max-width:927px) {
+	.border2 {
+		width: 60%;
+	}
+	.infor {
+		width: 60%;
+	}
+	#main4{
+		.fax{
+		  width: 90%;
+		  padding: 0px 0px;
+	    }
+    }
+	#main5{
+	 .hold{
+		 @include flex(column,space-between);
+	 }
+	}
+	.v1 {
+		width: auto;
+	}
+	input[type="text"],
+	input[type="email"] {
+		width: 100%;
+		padding-left: 0px;
+	}
+	.name {
+		left: 30%;
+	}
+}
+@media screen and (max-width:868px) {
+	* {
+		scroll-behavior: unset;
+	}
+    header{
+	 .up {
+		border: none;
+		button {
+			padding: 8px;
+			display: block;
+		}
+	  }
+    }
+	nav {
+		display: none;
+	}
+	.logo {
+		padding-top: 9px;
+	}
+	.arrow {
+		display: none;
+	}
+	h2 {
+		width: 60%;
+	}
+	#main1{
+	 .about{
+		width: 70%;
+	 }
+	}
+	.name {
+		left: 25%;
+	}
+}
+@media screen and (max-width:800px) {
+	#main5{
+	 .hold{
+		width: 50%;
+	 }
+	}
+}
+@media screen and (max-width:652px) {
+	.infor {
+		width: 80%;
+	}
+	#main6{
+	 .info1{
+		width: 70%;
+	 }
+	}
+	.border2 {
+		width: 80%;
+	}
+	.name {
+		left: 15%;
+	}
+	#main5{
+		.hold{
+			width:70%;
+		}
+	}
+}
+@media screen and (max-width:550px) {
+	#main6{
+	 .info1{
+		width: 90%;
+	 }
+	}
+	.name {
+		left: 7%;
+	}
+}
+@media screen and (max-width:480px) {
+	.name {
+		left: 15%;
+		h1 {
+			font-size: 38px;
+		}
+		p {
+			font-size: 25px;
+		}
+	}
+	#main2{
+		.col{
+		width: 50%;
+	 }
+	}
+	#main5{
+	 .hold{
+		width: 70%;
+	 }
+	}
+}
+@media screen and (max-width:420px) {
+	.name {
+		left: 7%;
+	}
+	#main2{
+		.col{
+		width: 60%;
+	 }
+	}
+	#main5{
+	  .hold{
+		width: 80%;
+	 }
+	}
+	.site {
+		text-align: center;
+		img {
+			width: 330px;
+			height: 450px;
+		}
+	}
+}
+@media screen and (max-width:375px) {
+	#main5{
+	 .hold{
+		width: 90%;
+	 }
+	}
+	.site {
+		img {
+			width: 310px;
+			height: 450px;
+		}
+	}
+}
+@media screen and (max-width:363px) {
+	.name {
+		left: 4%;
+	}
+}

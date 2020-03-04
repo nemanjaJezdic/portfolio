@@ -993,6 +993,35 @@ input[type="button"]:not(:focus) {
   border: none;
 }
 
+/*------------Footer-----------*/
+footer {
+  width: 100%;
+  padding: 10px 0px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#141e30), to(#243b55));
+  background: linear-gradient(to bottom, #141e30, #243b55);
+  text-align: center;
+  color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+footer a {
+  color: #ffffff;
+  margin-right: 10px;
+}
+
+footer p {
+  margin-top: 20px;
+  font-size: 13px;
+}
+
 /*-------------Responsive----------*/
 @media screen and (max-width: 1636px) {
   #main5 .center {

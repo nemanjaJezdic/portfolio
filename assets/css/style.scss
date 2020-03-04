@@ -652,6 +652,23 @@ input[type="button"] {
 		border: none;
 	}
 }
+/*------------Footer-----------*/
+footer{
+	width:100%;
+	padding:10px 0px;
+	background: linear-gradient(to bottom, #141e30, #243b55);
+	text-align: center;
+	color:$colorwhite;
+	@include flex(column,space-around);
+	a{
+		color:$colorwhite;
+		margin-right: 10px;
+	}
+	p{
+		margin-top:20px;
+		font-size:13px;
+	}
+}
 /*-------------Responsive----------*/
 @media screen and (max-width:1636px){
 	#main5{

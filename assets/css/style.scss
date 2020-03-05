@@ -892,6 +892,14 @@ footer{
 	.name {
 		left: 7%;
 	}
+	#main6{
+		background-attachment: unset;
+	}
+	.in{
+		span{
+			font-size:20px;
+		}
+	}
 }
 @media screen and (max-width:480px) {
 	.name {
@@ -952,5 +960,18 @@ footer{
 @media screen and (max-width:363px) {
 	.name {
 		left: 4%;
+	}
+}
+@media screen and (max-width:350px){
+	.site{
+		width:90%;
+	}
+	.name {
+		h1 {
+			font-size: 32px;
+		}
+		p {
+			font-size: 20px;
+		}
 	}
 }

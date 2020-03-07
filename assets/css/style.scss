@@ -363,7 +363,7 @@ nav {
 /*----------------------- SKills--------------------*/
 #main2 {
 	width: 100%;
-	background: linear-gradient(to right, #141e30, #243b55);
+	background: linear-gradient(to right, #141e30,#021b79);
 	margin: 130px 0px;
 	margin-bottom: 100px;
 	padding: 100px 0px;
@@ -654,9 +654,10 @@ input[type="button"] {
 }
 /*------------Footer-----------*/
 footer{
+	border-top: 1px solid #eff3f5;
 	width:100%;
 	padding:10px 0px;
-	background: linear-gradient(to bottom, #141e30, #243b55);
+	background: linear-gradient(to bottom,#0d0908,#243b55);
 	text-align: center;
 	color:$colorwhite;
 	@include flex(column,space-around);

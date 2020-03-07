@@ -579,8 +579,8 @@ nav ul li a:hover {
 /*----------------------- SKills--------------------*/
 #main2 {
   width: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#141e30), to(#243b55));
-  background: linear-gradient(to right, #141e30, #243b55);
+  background: -webkit-gradient(linear, left top, right top, from(#141e30), to(#021b79));
+  background: linear-gradient(to right, #141e30, #021b79);
   margin: 130px 0px;
   margin-bottom: 100px;
   padding: 100px 0px;
@@ -995,10 +995,11 @@ input[type="button"]:not(:focus) {
 
 /*------------Footer-----------*/
 footer {
+  border-top: 1px solid #eff3f5;
   width: 100%;
   padding: 10px 0px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#141e30), to(#243b55));
-  background: linear-gradient(to bottom, #141e30, #243b55);
+  background: -webkit-gradient(linear, left top, left bottom, from(#0d0908), to(#243b55));
+  background: linear-gradient(to bottom, #0d0908, #243b55);
   text-align: center;
   color: #ffffff;
   display: -webkit-box;

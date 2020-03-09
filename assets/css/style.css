@@ -1263,9 +1263,6 @@ footer p {
   .name {
     left: 7%;
   }
-  .in span {
-    font-size: 20px;
-  }
 }
 
 @media screen and (max-width: 480px) {

@@ -645,17 +645,14 @@ input[type="button"] {
 	border: none;
 	border-radius: 10px;
 	padding: 10px;
+	-webkit-padding:30px;
+	-webkit-background-color:$colorblue;
 	&:focus {
 		border: none;
 	}
 	&:not(:focus) {
 		border: none;
 	}
-}
-_::-webkit-full-page-media, _:future, :root .safari_only {
-   input[type="button"]{
-	   padding:20px;
-   }
 }
 /*------------Footer-----------*/
 footer{

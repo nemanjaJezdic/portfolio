@@ -640,6 +640,7 @@ textarea {
 	}
 }
 input[type="button"] {
+	all:unset;
 	width: 100%;
 	background-color:   $colorblue;
 	border: none;

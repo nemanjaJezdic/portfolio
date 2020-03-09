@@ -652,6 +652,11 @@ input[type="button"] {
 		border: none;
 	}
 }
+_::-webkit-full-page-media, _:future, :root .safari_only {
+   input[type="button"]{
+	   padding:20px;
+   }
+}
 /*------------Footer-----------*/
 footer{
 	border-top: 1px solid #eff3f5;
@@ -660,13 +665,12 @@ footer{
 	background: linear-gradient(to bottom,#0d0908,#243b55);
 	text-align: center;
 	color:$colorwhite;
-	@include flex(column,space-around);
 	a{
 		color:$colorwhite;
-		margin-top: 10px;
+		margin: 0px 7px;
 	}
 	p{
-		margin-top:20px;
+		margin-top:17px;
 		font-size:13px;
 	}
 }
@@ -772,6 +776,11 @@ footer{
 		.light {
 			padding-bottom: 100px;
 		}
+	}
+}
+@media screen and (max-width:1281px){
+	#main6{
+		background-attachment: unset;
 	}
 }
 @media screen and (max-width:1180px) {
@@ -891,9 +900,6 @@ footer{
 	}
 	.name {
 		left: 7%;
-	}
-	#main6{
-		background-attachment: unset;
 	}
 	.in{
 		span{

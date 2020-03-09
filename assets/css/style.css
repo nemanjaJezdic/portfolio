@@ -993,6 +993,10 @@ input[type="button"]:not(:focus) {
   border: none;
 }
 
+_::-webkit-full-page-media input[type="button"], _:future input[type="button"], :root .safari_only input[type="button"] {
+  padding: 20px;
+}
+
 /*------------Footer-----------*/
 footer {
   border-top: 1px solid #eff3f5;
@@ -1002,24 +1006,15 @@ footer {
   background: linear-gradient(to bottom, #0d0908, #243b55);
   text-align: center;
   color: #ffffff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
 }
 
 footer a {
   color: #ffffff;
-  margin-top: 10px;
+  margin: 0px 7px;
 }
 
 footer p {
-  margin-top: 20px;
+  margin-top: 17px;
   font-size: 13px;
 }
 
@@ -1143,6 +1138,12 @@ footer p {
   }
 }
 
+@media screen and (max-width: 1281px) {
+  #main6 {
+    background-attachment: unset;
+  }
+}
+
 @media screen and (max-width: 1180px) {
   #main6 .info1 {
     width: 50%;
@@ -1262,9 +1263,6 @@ footer p {
   }
   .name {
     left: 7%;
-  }
-  #main6 {
-    background-attachment: unset;
   }
   .in span {
     font-size: 20px;
